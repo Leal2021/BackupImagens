@@ -1,0 +1,117 @@
+<?php
+$hostname = "localhost";
+$user = "id8731413_penduduk";
+$password = "123456";
+$database = "id8731413_db_penduduk";
+
+$NIK=$_POST["NIK"];
+$NAMA=$_POST["NAMA"];
+$ALAMAT=$_POST["ALAMAT"];
+
+$connect=mysqli_connect($hostname, $user, $password, $database);
+$cek_kode=mysqli_query($connect,"select * from tb_penduduk where NIK='$NIK'");
+
+$cek=mysqli_num_rows($cek_kode);
+
+if($cek>0){
+	$input=mysqli_query($connect,"UPDATE tb_penduduk SET NAMA='$NAMA', ALAMAT='$ALAMAT' WHERE NIK='$NIK' ");
+echo "data berhasil diupdate";
+}
+else{
+echo "data tidak ditemukan";}
+
+?>
+--------------
+read
+<?php
+$hostname = "localhost";
+$user = "id8731413_penduduk";
+$password = "123456";
+$database = "id8731413_db_penduduk";
+
+$connect=mysqli_connect($hostname, $user, $password, $database);
+$data=mysqli_query($connect,"select * from tb_penduduk ");
+
+while($result=mysqli_fetch_array($data)){
+echo $result["NIK"];
+echo"<br>";
+echo $result["NAMA"];
+echo"<br>";
+echo $result["ALAMAT"];
+echo"||";
+}
+?>
+------------------------------------------
+create
+<?php
+$hostname = "localhost";
+$user = "id8731413_penduduk";
+$password = "123456";
+$database = "id8731413_db_penduduk";
+
+$NIK=$_POST["NIK"];
+$NAMA=$_POST["NAMA"];
+$ALAMAT=$_POST["ALAMAT"];
+
+$connect=mysqli_connect($hostname, $user, $password, $database);
+$cek_kode=mysqli_query($connect,"select * from tb_penduduk where NIK='$NIK'");
+
+$cek=mysqli_num_rows($cek_kode);
+if($cek>0){
+	echo "Data sudah ada";
+	}
+else{
+    $input=mysqli_query($connect,"insert into tb_penduduk (NIK,NAMA,ALAMAT) values ('$NIK','$NAMA','$ALAMAT')");
+	if($input){
+		echo"Data berhasil disimpan";
+		}
+	}
+?>
+--------------
+update
+<?php
+$hostname = "localhost";
+$user = "id8731413_penduduk";
+$password = "123456";
+$database = "id8731413_db_penduduk";
+
+$NIK=$_POST["NIK"];
+$NAMA=$_POST["NAMA"];
+$ALAMAT=$_POST["ALAMAT"];
+
+$connect=mysqli_connect($hostname, $user, $password, $database);
+$cek_kode=mysqli_query($connect,"select * from tb_penduduk where NIK='$NIK'");
+
+$cek=mysqli_num_rows($cek_kode);
+
+if($cek>0){
+	$input=mysqli_query($connect,"UPDATE tb_penduduk SET NAMA='$NAMA', ALAMAT='$ALAMAT' WHERE NIK='$NIK' ");
+echo "data berhasil diupdate";
+}
+else{
+echo "data tidak ditemukan";}
+
+?>
+---------------------------------
+delete
+<?php
+$hostname = "localhost";
+$user = "id8731413_penduduk";
+$password = "123456";
+$database = "id8731413_db_penduduk";
+
+$NIK=$_POST["NIK"];
+
+$connect=mysqli_connect($hostname, $user, $password, $database);
+$cek_kode=mysqli_query($connect,"select * from tb_penduduk where NIK='$NIK'");
+
+$cek=mysqli_num_rows($cek_kode);
+
+if($cek>0){
+	$input=mysqli_query($connect,"DELETE FROM tb_penduduk WHERE NIK='$NIK' ");
+echo "data berhasil didelete";
+}
+else{
+echo "data tidak ditemukan";
+}
+?>

@@ -1,0 +1,38 @@
+Nova série de APLICATIVO PARA BARBEARIA do ZERO
+
+#4e4a57ff escuro
+
+#807b78ff
+
+#a19c9cff	09:26
+
+#38363efe
+
+font material icons = home, favorite, loyalty,perm_phone_msg,shopping_cart,phone_iphone,share,phonelink_lock,
+
+Durante a criação ha diversas telas que ficam invisiveis.
+
+CRIAÇÃO DO BANCO DE DADOS COM SPREADSHEET
+EXAMPLE USING ENVIRONMENT VARIABLE
+# Shell:
+$ export AIRTABLE_API_KEY=YOUR_API_KEY
+
+# Node:
+const base = require('airtable').base('appe3KGif95eledxq');
+EXAMPLE USING CUSTOM CONFIGURATION
+var Airtable = require('airtable');
+Airtable.configure({
+    endpointUrl: 'https://api.airtable.com',
+    apiKey: 'YOUR_API_KEY'
+});
+var base = Airtable.base('appe3KGif95eledxq');
+
+appp1j16eP8W32u3D
+
+appp1j16eP8W32u3D
+
+keyT16DpaCI3XwALT  keys generate keyT16DpaCI3XwALT
+
+appp1j16eP8W32u3D base de dados
+
+Filtragem de Dados por Data Utilizando o Airtable [ Kodular ]
